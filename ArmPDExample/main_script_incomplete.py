@@ -38,6 +38,8 @@ total_time = stepsize * nbr_timesteps;
 com_i = model.calcMassCenterPosition(state);
 max_com = -math.inf;
 
+
+
 for i in range(0,nbr_timesteps+1):
 	t = state.getTime() + stepsize
 	state = manager.integrate(t)
