@@ -54,13 +54,13 @@ for i in range(0,nbr_timesteps+1):
 	#The angle is elbow_flexion.
 	elbow_flexion = coords.get('elbow_flexion').getValue(state);
 	elbow_flexion_v = coords.get('elbow_flexion').getSpeedValue(state);
-	target_angle = 1.0;
+	target_angle = 0.1;
 	
 	for j in range(functionSet.getSize()):
 		func = osim.Constant.safeDownCast(functionSet.get(j))
 		
 		if j == 1:
-			func.setValue(-20 * (shoulder_elv - 1.5708) - 1 * shoulder_elv_v)
+			func.setValue(-50 * (shoulder_elv - 1.5708) - 1 * shoulder_elv_v)
 		elif j == 3:
 		#	INCLUDE CODE FOR ELBOW  
 			func.setValue(-15 * (elbow_flexion - target_angle) - 1 * elbow_flexion_v)
